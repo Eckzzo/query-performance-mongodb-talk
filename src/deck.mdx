@@ -1,0 +1,150 @@
+import { Head, Image, Appear } from 'mdx-deck';
+import { CodeSurfer } from 'mdx-deck-code-surfer';
+
+import Code from './Code';
+import Cover from './Cover';
+import Intro from './Intro';
+import Thanks from './Thanks';
+export { default as theme } from './theme';
+export * as components from './components';
+
+<Head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap"
+		rel="stylesheet"
+	/>
+	<link href="https://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet" />
+	<title>Query Performance on MongoDB</title>
+</Head>
+
+<Cover />
+
+---
+
+<Intro />
+
+---
+
+# Overview
+
+<ul>
+	<li>Introduction</li>
+	<li>What Affects Performance</li>
+	<li>Data Modeling</li>
+	<li>Indexes</li>
+	<li>Aggregate Pipeline</li>
+	<li>Allow Disk Use</li>
+	<li>Heavy Queries</li>
+	<li>Conclusion</li>
+</ul>
+
+---
+
+# Introduction
+
+<ul>
+	<Appear>
+		<li>Learn</li>
+		<li>Purpose</li>
+		<li>Share Knowledge</li>
+	</Appear>
+</ul>
+
+---
+
+# What Affects Performance
+
+<ul>
+	<Appear>
+		<li>Lookups</li>
+		<li>Missing Indexes</li>
+		<li>Inneficient Pipeline</li>
+		<li>Large Datasets</li>
+		<li>Data Modeling</li>
+	</Appear>
+</ul>
+
+---
+
+# Data Modeling
+
+<ul>
+	<Appear>
+		<li>Data Modeling is About Collecting Data</li>
+		<li>But it's Also About Retrieving Data</li>
+		<li>Storage is Cheap and CPU is Expensive</li>
+		<li>Decoupling</li>
+		<li>Think About How to Query Data When Modeling</li>
+	</Appear>
+</ul>
+
+---
+
+# Indexes
+
+<ul>
+	<Appear>
+		<li>_id has an Index</li>
+		<li>O(n) vs O(log n)</li>
+		<li>Composite Indexes</li>
+		<li>Heavier Writes</li>
+	</Appear>
+</ul>
+
+---
+
+# Aggregate Pipeline
+
+<ul>
+	<Appear>
+		<li>Stages</li>
+		<li>Pipe</li>
+		<li>Match</li>
+		<li>Efficient Matches</li>
+		<li>Aggregate</li>
+		<li>Sort and Limit</li>
+	</Appear>
+</ul>
+
+---
+
+<Code
+	title="Inefficient Pipeline"
+	code={require('!raw-loader!./code/value-query.ts')}
+	showNumbers={false}
+	dark={true}
+	fontSize={16}
+	lang="ts"
+/>
+
+---
+
+# Allow Disk Use
+
+<ul>
+	<Appear>
+		<li>Connection Memory Limit</li>
+		<li>Large Datasets</li>
+		<li>Write in Hard Drive</li>
+		<li>Hard Drive vs Memory</li>
+	</Appear>
+</ul>
+
+---
+
+# Heavy Queries
+
+<ul>
+	<Appear>
+		<li>Sometimes the Query is Slow by Nature</li>
+		<li>Expensive Aggregate Calculations</li>
+		<li>Analytics</li>
+		<li>Materialized Views</li>
+	</Appear>
+</ul>
+
+---
+
+<Thanks />
